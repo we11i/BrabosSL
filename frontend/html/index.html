@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESPORTIVOS-SL</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/index.css">
+  
+  <!-- <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      background-color: #111 !important;
+      border-bottom: 1px solid #333;
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    .nav-link {
+      color: #ccc !important;
+      font-size: 14px;
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      background-color: #111;
+      border: 1px solid #333;
+      color: white;
+      height: 40px;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+
+    .form-control::placeholder {
+      color: #aaa;
+    }
+
+    .form-control:focus {
+      background-color: #111;
+      color: white;
+      border-color: #555;
+      box-shadow: none;
+    }
+
+    .btn-outline-light {
+      border-color: #333;
+      height: 40px;
+      font-size: 14px;
+      padding: 6px 20px;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #333;
+      border-color: #333;
+    }
+
+    .hero {
+      padding: 50px 0;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 700px;
+      margin-bottom: 25px;
+    }
+
+    .btn-ver {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .hero-image img {
+      border-radius: 12px;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .cars {
+      padding: 40px 0 60px;
+    }
+
+    .cars h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .cars p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #1b1b1b;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card img {
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      padding: 15px;
+    }
+
+    .card-text h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .card-text p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    footer {
+      border-top: 1px solid #333;
+      padding: 20px 0;
+      text-align: center;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .cars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style> -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+      <a class="navbar-brand logo" href="#">BRABOS-SL</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">INICIO</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="populares.html">POPULARES</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="mdls.html">MDLS CARS</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" onsubmit="pesquisarEmOutraPagina(event)">
+          <input id="pesquisa-carro" class="form-control me-2" type="search" placeholder="Pesquisar carro...">
+          <button id="botao-buscar" class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Carros esportivos que chamam atenção</h1>
+
+        <p>
+          Do popular ao esportivo, reunimos os melhores carros para todos os estilos e momentos,
+          combinando desempenho, conforto e design.
+        </p>
+
+        <a href="#carros" class="btn-ver">Ver carros</a>
+
+        <div class="hero-image">
+          <img src="../img/javier-ferrer-roll-royce.gif" alt="Carro em destaque">
+        </div>
+      </div>
+    </section>
+
+    <section class="cars" id="carros">
+      <div class="container">
+        <h2>Modelos em destaque</h2>
+        <p>Aqui começa o seu sonho.</p>
+
+        <div class="cars-grid">
+
+          <div class="card">
+            <!-- <img src="tenor.gif" alt="Fiat Uno"> -->
+            <img src="../img/tenor.gif" alt="Fiat Uno">
+            <div class="card-text">
+              <h3>Sonhar não custa nada,mas tomar uma atitude custa e vale a pena </h3>
+              <p>Não é só um carro — é o som da potência, a força da liberdade e a prova de que você não nasceu pra andar devagar...</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- <img src="macacofudido.webp" alt="Gol"> -->
+            <img src="../img/macacofudido.webp" alt="Gol">
+            <div class="card-text">
+              <h3>Não são tempos de andar a pé, ta na hora de adiquirir o seu veiculo</h3>
+              <p>Não é sobre chegar — é sobre dominar o caminho, sentir o motor rugir e provar que você nasceu pra liderar, não pra seguir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 ESPORTIVOS-SL</p>
+    </div>
+  </footer>
+
+  <script>
+  function pesquisarEmOutraPagina(event) {
+    event.preventDefault();
+
+    const inputPesquisa = document.getElementById("pesquisa-carro");
+    const textoDigitado = inputPesquisa.value.toLowerCase().trim();
+
+    if (textoDigitado === "") return;
+
+    const populares = ["uno", "gol", "celta", "onix", "palio"];
+    const mdls = ["chevetão", "chevetao", "scort", "civic", "marea", "lancer"];
+
+    const texto = textoDigitado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    for (let i = 0; i < populares.length; i++) {
+      if (texto.includes(populares[i])) {
+        window.location.href = "populares.html?carro=" + encodeURIComponent(textoDigitado);
+        return;
+      }
+    }
+
+    for (let i = 0; i < mdls.length; i++) {
+      if (texto.includes(mdls[i])) {
+        window.location.href = "mdls.html?carro=" + encodeURIComponent(textoDigitado);
+        return;
+      }
+    }
+
+    alert("Carro não encontrado.");
+  }
+  </script>
+
+  
+  <script src="../js/index.js" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
