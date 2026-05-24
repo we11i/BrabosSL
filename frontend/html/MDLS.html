@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRABOS-SL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mdls.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand logo" href="../../index.html">BRABOS-SL</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">INICIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="populares.html">POPULARES</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="MDLS.html">MDLS CARS</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" onsubmit="search(event)">
+                    <input id="pesquisa-carro" class="form-control me-2" type="search" placeholder="Pesquisar carro...">
+                    <button id="botao-buscar" class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <div id="modal" class="modal">
+        <div class="modal-content" id="conteudo-modal">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+        </div>
+    </div>
+
+    <div class="content">ESPORTIVOS SL</div>
+
+    <div class="main-container">
+        <div class="card-wrapper">
+
+            <div class="card">
+                <!-- <img src="carro1.jpg" alt="image"> -->
+                <img src="../img/carro1.jpg" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">CHEVETÃO</h3>
+                    </a>
+                    <span>Modelo esportivo com bodykit, com aprimoramentos para deslizar nas pistas,</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('CHEVETÃO', 'R$ 60.000,00', 'Novo', 2023, 'Chevrolet', 'Chevette')">COMPRE AGORA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- <img src="carro2.jpg" alt="image"> -->
+                <img src="../img/carro2.jpg" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">SCORT</h3>
+                    </a>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint nam perferendis.</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('SCORT', 'R$ 70.000,00', 'Novo', 2023, 'Chevrolet', 'Sorento')">COMPRE AGORA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- <img src="carro3.webp" alt="image"> -->
+                <img src="../img/carro3.webp" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">CIVIC BOLADÃO</h3>
+                    </a>
+                    <span>pra pegar mina em baile</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('Civic BOLADÃO', 'R$ 60.000,00', 'Novo', 2023, 'Honda', 'Civic')">COMPRE AGORA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- <img src="carro4.jpg" alt="image"> -->
+                <img src="../img/carro4.jpg" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">Fiat Marea</h3>
+                    </a>
+                    <span>Marea bomba, é a mesma bosta com bodykit, para os apaixonados em carros esportivos e bombas</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('Fiat Marea', 'R$ 50.000,00', 'Novo', 2023, 'Fiat', 'Marea')">VER CARRO</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- <img src="a12ca2ae3fe29572dd0db2ca5b36d940.jpg" alt="image"> -->
+                <img src="../img/a12ca2ae3fe29572dd0db2ca5b36d940.jpg" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">Golf Brabo</h3>
+                    </a>
+                    <span>NOVIDADE NO MERCADO</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('Golf Brabo', 'R$ 100.000,00', 'Novo', 2023, 'Volkswagen', 'Golf')">COMPRE AGORA</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- <img src="lancer evolution.jpg" alt="image"> -->
+                <img src="../img/lancer evolution.jpg" alt="image">
+                <div class="text-wrapper">
+                    <a href="#">
+                        <h3 class="title">Lancer evolution</h3>
+                    </a>
+                    <span>carro brabo do capeta,anda igual homem fugindo da mulher quando vai pro bar escondido</span>
+                    <br>
+                    <button class="botão" onclick="mostrarDetalhes('Lancer Evolution', 'R$ 80.000,00', 'Novo', 2023, 'Mitsubishi', 'Lancer Evolution')">COMPRE AGORA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>Carregando...</span>
+    </div>
+    
+    <!-- <script>
+        let carros =JSON.parse(localStorage.getItem('carros')) || [
+        ({nome: "Civic", preco: 60000, estado: "Novo", ano: 2023, marca: "Honda", modelo: "Civic"}),
+        ({nome: "Chevetão", preco: 60000, estado: "Novo", ano: 2023, marca: "Chevrolet", modelo: "Chevette"}),
+        ({nome: "Scort", preco: 70000, estado: "Novo", ano: 2023, marca: "Chevrolet", modelo: "Sorento"}),
+        ({nome: "Fiat Marea", preco: 50000, estado: "Novo", ano: 2023, marca: "Fiat", modelo: "Marea"}),
+        ({nome: "Golf Brabo", preco: 100000, estado: "Novo", ano: 2023, marca: "Volkswagen", modelo: "Golf"}),
+        ({nome: "Lancer Evolution", preco: 80000, estado: "Novo", ano: 2023, marca: "Mitsubishi", modelo: "Lancer Evolution"})
+        ];
+
+    </script>
+
+    <script>
+        function mostrarDetalhes(nome, valor, estado, ano, marca, modelo) {
+            mostrarLoading();
+
+            setTimeout(function () {
+                esconderLoading();
+
+                const conteudoModal = document.getElementById('conteudo-modal');
+
+                conteudoModal.innerHTML = `
+                    <span class="fechar" onclick="fecharModal()">&times;</span>
+                    <h2>${nome}</h2>
+                    <p>Valor: ${valor}</p>
+                    <p>Estado: ${estado}</p>
+                    <p>Ano: ${ano}</p>
+                    <p>Marca: ${marca}</p>
+                    <p>Modelo: ${modelo}</p>
+                    <button class="botão" onclick="fecharModal()">Fechar</button>
+                `;
+
+                document.getElementById('modal').style.display = 'block';
+            }, 1500);
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function mostrarLoading() {
+            document.getElementById('loading').style.display = 'flex';
+        }
+
+        function esconderLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+
+            if (event.target === modal) {
+                fecharModal();
+            }
+        };
+
+        const pesquisaInput = document.getElementById('pesquisa-carro');
+        const botaoBuscar = document.getElementById('botao-buscar');
+        const cards = document.querySelectorAll('.card');
+
+        /*
+        function filtrarCarros() {
+            const textoDigitado = pesquisaInput.value.toLowerCase().trim();
+
+            cards.forEach(function(card) {
+                const nomeCarro = card.querySelector('.title').textContent.toLowerCase();
+
+                if (nomeCarro.includes(textoDigitado)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        */
+
+        function pegarCarroDaURL() {
+            const parametros = new URLSearchParams(window.location.search);
+            const carro = parametros.get('carro');
+
+            if (carro) {
+                pesquisaInput.value = carro;
+                filtrarCarros();
+            }
+        }
+
+        /*
+        function pesquisarEmOutraPagina(event) {
+            event.preventDefault();
+
+            const inputPesquisa = document.getElementById("pesquisa-carro");
+            const textoDigitado = inputPesquisa.value.trim();
+
+            if (textoDigitado !== "") {
+                window.location.href = "MDLS.html?carro=" + encodeURIComponent(textoDigitado);
+            } else {
+                window.location.href = "populares.html";
+            }
+        }
+        */
+
+        function search(event){
+            event.preventDefault();
+
+            if(event){
+                event.preventDefault();
+            }
+
+            const searchQuery = document.getElementById('pesquisa-carro');
+            const textLowCase = searchQuery.value.toLowerCase().trim();
+            
+            if(textLowCase == ''){
+                cards.forEach((card) => {
+                    card.style.display = 'block';
+                });
+                return;
+            }
+
+            let inPage = false;
+
+            cards.forEach((card) => {
+                const nameCar = card.querySelector('.title').textContent.toLowerCase().trim();
+
+                if(nameCar.includes(textLowCase)){
+                    card.style.display = 'block';
+                    inPage = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if(inPage !== true){
+                window.location.href = 'populares.html' + '?carro=' + encodeURIComponent(textLowCase);
+                return;
+            }
+        }
+    </script> -->
+
+    <script src="../js/mdls.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
